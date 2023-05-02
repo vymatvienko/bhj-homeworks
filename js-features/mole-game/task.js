@@ -10,11 +10,12 @@ function getHole(holeIndex) {
   return document.getElementById("hole" + holeIndex.toString());
 }
 
-function clearCounters() {
+function clearCounters(text) {
   winners = 0;
   dead.textContent = "0";
   loses = 0;
   lost.textContent = "0";
+  alert(text);
 }
 
 for (let i = 1; i <= 9; i++) {
@@ -24,13 +25,13 @@ for (let i = 1; i <= 9; i++) {
       winners++;
       dead.textContent = winners.toString();
       if (winners === 10) {
-        clearCounters(alert("Победа!"));
+        clearCounters("Победа!");
       }
     } else {
       loses++;
       lost.textContent = loses.toString();
       if (loses === 5) {
-        clearCounters(alert("Вы проиграли :("));
+        clearCounters("Вы проиграли :(");
       }
     }
   };
