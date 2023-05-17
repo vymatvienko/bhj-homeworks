@@ -17,6 +17,16 @@ class Game {
   }
 
   registerEvents() {
+    document.addEventListener("keyup", (a) => {
+      console.log(a);
+      console.log(this.currentSymbol.textContent);
+      
+      if (this.currentSymbol.textContent.toLowerCase() === String.fromCharCode(a.keyCode).toLowerCase()) {
+        this.success();
+      } else if (a.keyCode !== 16 && a.keyCode !== 20) {
+        this.fail();
+      };
+    });
     /*
       TODO:
       Написать обработчик события, который откликается
