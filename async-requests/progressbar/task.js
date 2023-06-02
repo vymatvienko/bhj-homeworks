@@ -4,7 +4,7 @@ document.forms.form.addEventListener("submit", (event) => {
     event.preventDefault();
     const xhr = new XMLHttpRequest();
     xhr.upload.onprogress = (e) => {
-        progress.value = (e.loaded / e.total * 10).toFixed(1);
+        progress.value = e.loaded / e.total;
     };
     xhr.upload.onload = () => {
         alert("Файл успешно загружен");
